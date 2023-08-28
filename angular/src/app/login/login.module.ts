@@ -6,12 +6,8 @@ import { UserregisterComponent } from './userregister/userregister.component';
 
 
 @NgModule({
-  declarations: [
-    UserloginComponent,
-    UserregisterComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [UserloginComponent, UserregisterComponent],
+  imports: [CommonModule],
+  exports: [UserloginComponent, UserregisterComponent],
 })
-export class LoginModule { }
+export class LoginModule {}
