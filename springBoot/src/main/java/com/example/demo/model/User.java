@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,9 +11,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity@Data@NoArgsConstructor@AllArgsConstructor@ToString
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
@@ -23,6 +27,5 @@ public class User {
 	long mobNum;
 	Date registrationDate;
 	int userRole;
-	
 
 }
