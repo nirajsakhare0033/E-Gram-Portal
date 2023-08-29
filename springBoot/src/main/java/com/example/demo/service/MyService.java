@@ -8,6 +8,9 @@ import com.example.demo.model.User;
 public interface MyService {
 
 	 boolean storeUserInDatabase(User user); 
+	 
+	 //login
+	 int loginUser(String UIusername, String UIpassword);
 		
 		
 	

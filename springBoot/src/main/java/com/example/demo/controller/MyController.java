@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +21,14 @@ public class MyController {
 	MyService service;
 	
 	
-	@PostMapping("login")
-	public boolean login(@RequestBody User user) {
+	@PostMapping("register")
+	public boolean register(@RequestBody User user) {
 		return service.storeUserInDatabase(user);
+	}
+	
+	@GetMapping("login{UIusername}/{UIpassword}")
+	public int login(@PathVariable String UIusername, @PathVariable String UIpassword ) {
+		return service.loginUser(UIusername, UIpassword);
 	}
 	
 	

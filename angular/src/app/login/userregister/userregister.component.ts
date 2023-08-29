@@ -16,7 +16,7 @@ export class UserregisterComponent {
 
   userRegister() {
     this.http
-      .post(this.url + '/login', this.registerUser)
+      .post(this.url + '/register', this.registerUser)
       .subscribe((data: any) => {
         if (data == false) window.alert('register not sussfull');
         else window.alert('register sussfull');

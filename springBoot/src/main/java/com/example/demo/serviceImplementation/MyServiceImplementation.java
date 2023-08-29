@@ -12,12 +12,32 @@ import com.example.demo.service.MyService;
 @Component
 public class MyServiceImplementation implements MyService {
 
+
 	@Autowired
 	UserRepo userRepo;
 
+
+
+	@Override
+	public int loginUser(String UIusername, String UIpassword) {
+
+		int cnt = userRepo.countByUsername(UIusername);
+
+		if(cnt == 1) {
+			User user = userRepo.getUserFromUsername(UIusername);
+			if(user.getUsername().equals(UIusername) && user.getUsername().equals(UIpassword)) {
+				return user.getUserRole();
+			}
+			else {
+				return -1;
+			}
+		}
+		return -1;
+	}
+
 	@Override
 	public boolean storeUserInDatabase(User user) {
-		// TODO Auto-generated method stub
+
 
 		try {
 			user.setRegistrationDate(new Date());
@@ -30,5 +50,7 @@ public class MyServiceImplementation implements MyService {
 		}
 
 	}
+
+
 
 }
