@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'src/app/model/User';
 
 @Component({
   selector: 'app-userregister',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./userregister.component.css']
 })
 export class UserregisterComponent {
+
+  constructor(){}
+
+  registerUser:User = new User();
+
+  userRegister(){
+    
+  }
 
 }

@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserloginComponent } from './login/userlogin/userlogin.component';
-import { UserregisterComponent } from './login/userregister/userregister.component';
+
 import { LoginModule } from './login/login.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { LoginModule } from './login/login.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,FormsModule,
+
     LoginModule
   ],
  
