@@ -5,4 +5,5 @@ export class User {
   password:string;
   registrationDate:Date;
   userRole:number;
+  mobNum:number;
 }

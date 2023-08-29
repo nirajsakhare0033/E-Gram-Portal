@@ -1,3 +1,13 @@
 .register{
-  padding: 50px 10px;
+  text-align: center;
+}
+.card{
+  margin: 20px 227px;
+  padding:-40px 100px
+}
+.card-body{
+  margin: 2px -63px -25px 212px;
+}
+label{
+  color: rgb(0, 0, 0);
 }
