@@ -6,15 +6,15 @@
     <div class="register">
       <div class="form-group col-md-6 text-center">
         <label>UserName</label>
-        <input type="text" class="form-control" placeholder="FullName" />
+        <input [(ngModel)]="UIusername" type="text" class="form-control" placeholder="FullName" />
       </div>
 
       <div class="form-group col-md-6">
         <label>Password</label>
-        <input type="password" class="form-control" placeholder="username" />
+        <input [(ngModel)]="UIpassword" type="password" class="form-control" placeholder="username" />
       </div>
       <div class="form-group col-md-6">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button (click)="login()" type="submit" class="btn btn-primary">Sign in</button>
       </div>
     </div>
   </div>
