@@ -16,8 +16,6 @@ public class MyServiceImplementation implements MyService {
 	@Autowired
 	UserRepo userRepo;
 
-
-
 	@Override
 	public int loginUser(String UIusername, String UIpassword) {
 
