@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.User;
+import com.example.demo.model.Village;
 import com.example.demo.service.MyService;
 
 
@@ -20,15 +21,21 @@ public class MyController {
 	@Autowired
 	MyService service;
 	
-	
+	//register
 	@PostMapping("register")
 	public boolean register(@RequestBody User user) {
 		return service.storeUserInDatabase(user);
 	}
-	
+	//login
 	@GetMapping("login{UIusername}/{UIpassword}")
 	public int login(@PathVariable String UIusername, @PathVariable String UIpassword ) {
 		return service.loginUser(UIusername, UIpassword);
+	}
+	
+	//village
+	@PostMapping("addVillageData")
+	public boolean addVillageData(@RequestBody Village village) {
+		return service.addVillageDataInDatabase(village);
 	}
 	
 	
