@@ -20,6 +20,7 @@
   unverified user
 </button>
 <button (click)="show(2)" class="btn btn-secondary">Add Village</button>
+<button (click)="show(3)" (click)="getVillage()">AddScheme</button>
 
 <table border="1px soild gray" *ngIf="whatToShow == 1">
   <tr>
@@ -40,6 +41,14 @@
     </td>
   </tr>
 </table>
+<div *ngIf="whatToShow==3">
+  village name: <br>
+  <select name="" id="" [(ngModel)]="selectedVillage">
+    <option >--select--/option>
+    <option  *ngFor="let v of alllVillageData">{{v.villageName}}</option>
+  </select>
+
+</div>
 
 <div class="card text-center" *ngIf="whatToShow==2">
   <div class="card-header">
