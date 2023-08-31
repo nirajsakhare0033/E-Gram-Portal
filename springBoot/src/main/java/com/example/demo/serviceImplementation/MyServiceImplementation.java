@@ -1,6 +1,7 @@
 package com.example.demo.serviceImplementation;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -43,6 +44,7 @@ public class MyServiceImplementation implements MyService {
 			user.setRegistrationDate(new Date());
 			user.setUserRole(3);
 			userRepo.save(user);
+			
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,6 +67,35 @@ public class MyServiceImplementation implements MyService {
 		 e.printStackTrace();
 	 }
 		return false;
+	}
+
+	@Override
+	public List<User> getunverifieduser() {
+		
+		try {
+			List<User> userData = userRepo.getDataOfUnverifiedUser();
+			return userData;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		
+	}
+
+	@Override
+	public List<Village> getAllVillage() {
+		
+		try {
+			List<Village> allData = villageRepo.findAll();
+			return allData;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 
 

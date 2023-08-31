@@ -7,5 +7,36 @@
     </li>
   </ul>
 </nav>
-<input type="text" [(ngModel)]="temp">
+
+
+<!-- <div>
+  <label >Village Name: </label>
+ <input type="text" [(ngModel)]="Village.villageName">
+ <label >Pincode: </label>
+ <input type="text" [(ngModel)]="Village.pincode">
 <button class="btn btn-outline-primary" (click)="addVillage()">Add Village</button>
+</div> -->
+<div class="card text-center">
+  <div class="card-header">
+    <h1>Add Data</h1>
+  </div>
+  <div class="card-body text-center">
+    <div class="register">
+      <div class="form-group col-md-6 text-center">
+        <label>Village Name</label>
+        <input [(ngModel)]="Village.villageName" type="text" class="form-control" placeholder="Village Name" />
+      </div>
+
+      <div class="form-group col-md-6 text-center">
+        <label>Pincode</label>
+        <input [(ngModel)]="Village.pincode" type="text" class="form-control" placeholder="Pincode" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <button (click)="addVillage()" type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +39,17 @@ public class MyController {
 	public boolean addVillageData(@RequestBody Village village) {
 		return service.addVillageDataInDatabase(village);
 	}
+	
+	@GetMapping("getVillageData")
+	public List<Village> getVillageData(){
+		return service.getAllVillage();
+	}
+	
+	@GetMapping("getunverifieduserData")
+	public List<User> getunverifieduserData(){
+		return service.getunverifieduser();
+	}
+	
 	
 	
 	

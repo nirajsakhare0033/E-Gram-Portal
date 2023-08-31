@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.User;
@@ -13,8 +15,12 @@ public interface MyService {
 	 int loginUser(String UIusername, String UIpassword);
 	 
 	 //village
+	 
+	 List<User> getunverifieduser();
+	 
 	 boolean addVillageDataInDatabase(Village village);
 	 
+	 List<Village> getAllVillage();
 		
 		
 	
