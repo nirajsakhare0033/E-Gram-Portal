@@ -43,7 +43,9 @@ public class MyServiceImplementation implements MyService {
 		try {
 			user.setRegistrationDate(new Date());
 			user.setUserRole(3);
+			user.setUserverified(1);
 			userRepo.save(user);
+			
 			
 			return true;
 		} catch (Exception e) {

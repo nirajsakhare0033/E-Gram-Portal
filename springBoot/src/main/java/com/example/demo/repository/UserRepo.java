@@ -15,7 +15,7 @@ public interface UserRepo extends JpaRepository<User, Integer>{
 	User getUserFromUsername(String UIusername);
 	
 	//superadmin data 
-	@Query(value = "SELECT * FROM user where is_userverified=1", nativeQuery = true)
+	@Query(value = "SELECT * FROM user where userverified=1", nativeQuery = true)
 	List<User> getDataOfUnverifiedUser();
 	
 

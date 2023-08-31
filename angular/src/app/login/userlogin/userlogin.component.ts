@@ -24,7 +24,14 @@ export class UserloginComponent {
       .subscribe((data: any) => {
         if (data == -1) {
           window.alert('login not successful');
-        } else {
+        }else if(data== -2){
+          window.alert("user not verified please varified first");
+        }
+        else if(data == -3){
+          alert("user rejected can not login")
+        }
+        
+        else {
           this.app.isLoginSuccessData = data;
         }
       });

@@ -27,5 +27,6 @@ public class User {
 	long mobNum;
 	Date registrationDate;
 	int userRole;
+	int userverified;
 
 }

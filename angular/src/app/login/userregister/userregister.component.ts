@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { User } from 'src/app/model/User';
+import { Village } from 'src/app/model/Village';
 
 @Component({
   selector: 'app-userregister',
@@ -9,8 +10,18 @@ import { User } from 'src/app/model/User';
 })
 export class UserregisterComponent {
   url = 'http://localhost:8080';
-
-  constructor(private http: HttpClient) {}
+  allVillageData: Village[] = [];
+  constructor(private http: HttpClient) {
+    this.http
+      .get('http://localhost:8080/' + 'getVillageData')
+      .subscribe((data: any) => {
+        if (data == null) {
+          alert('exception error');
+        } else {
+          this.allVillageData = data;
+        }
+      });
+  }
   confirmPassword: string;
   registerUser: User = new User();
 

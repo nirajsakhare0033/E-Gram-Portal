@@ -3,11 +3,10 @@
 
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <h2 style="color: lightgreen;">Super Admin</h2>
+      <h2 style="color: lightgreen">Super Admin</h2>
     </li>
   </ul>
 </nav>
-
 
 <!-- <div>
   <label >Village Name: </label>
@@ -16,7 +15,33 @@
  <input type="text" [(ngModel)]="Village.pincode">
 <button class="btn btn-outline-primary" (click)="addVillage()">Add Village</button>
 </div> -->
-<div class="card text-center">
+
+<button (click)="getDataOfUser()" (click)="show(1)" class="btn btn-secondary">
+  unverified user
+</button>
+<button (click)="show(2)" class="btn btn-secondary">Add Village</button>
+
+<table border="1px soild gray" *ngIf="whatToShow == 1">
+  <tr>
+    <td>SN</td>
+    <td>FullName</td>
+    <td>MobNumber</td>
+    <td>Registertation date</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let ll of allunverifiedUser; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ ll.fullname }}</td>
+    <td>{{ ll.mobNum }}</td>
+    <td>{{ ll.registrationDate | date : "medium" }}</td>
+    <td>
+      <button class="btn btn-primary">verfiy</button>
+      <button class="btn btn-primary">reject</button>
+    </td>
+  </tr>
+</table>
+
+<div class="card text-center" *ngIf="whatToShow==2">
   <div class="card-header">
     <h1>Add Data</h1>
   </div>
@@ -24,19 +49,29 @@
     <div class="register">
       <div class="form-group col-md-6 text-center">
         <label>Village Name</label>
-        <input [(ngModel)]="Village.villageName" type="text" class="form-control" placeholder="Village Name" />
+        <input
+          [(ngModel)]="Village.villageName"
+          type="text"
+          class="form-control"
+          placeholder="Village Name"
+        />
       </div>
 
       <div class="form-group col-md-6 text-center">
         <label>Pincode</label>
-        <input [(ngModel)]="Village.pincode" type="text" class="form-control" placeholder="Pincode" />
+        <input
+          [(ngModel)]="Village.pincode"
+          type="text"
+          class="form-control"
+          placeholder="Pincode"
+        />
       </div>
 
       <div class="form-group col-md-6">
-        <button (click)="addVillage()" type="submit" class="btn btn-primary">Sign in</button>
+        <button (click)="addVillage()" type="submit" class="btn btn-primary">
+          Sign in
+        </button>
       </div>
     </div>
   </div>
 </div>
-
-
