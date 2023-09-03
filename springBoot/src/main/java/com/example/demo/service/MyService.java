@@ -12,6 +12,8 @@ import com.example.demo.model.Village;
 public interface MyService {
 	//login
 	// boolean storeUserInDatabase(User user, Object object); 
+	boolean storeUserInDatabase(User user, String selectedVillage);
+
 	 //login
 	 int loginUser(String UIusername, String UIpassword);
 	 
@@ -25,8 +27,7 @@ public interface MyService {
 	 
 	 //schema 
 	 boolean addSchemeInVillage(Scheme scheme, String selectVillage);
-	boolean storeUserInDatabase(User user, String selectedVillage);
-		
+			
 		
 	
 	

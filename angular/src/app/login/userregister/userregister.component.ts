@@ -24,11 +24,14 @@ export class UserregisterComponent {
   }
   confirmPassword: string;
   registerUser: User = new User();
-  selectedVillage;
+  selectedVillage="";
 
   userRegister() {
     this.http
-      .post(this.url + '/register' + 'selectedVillage', this.registerUser, this.selectedVillage)
+      .post(
+        'http://localhost:8080/' + 'register' + this.registerUser,
+        this.selectedVillage
+      )
       .subscribe((data: any) => {
         if (data == false) window.alert('register not sussfull');
         else window.alert('register sussfull');

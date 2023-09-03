@@ -22,7 +22,7 @@ public class Village {
 	int id;
 	String villageName;
 	int pincode;
-	String selectedVillage;
+	//String selectedVillage;
 	
 	
 	@OneToMany

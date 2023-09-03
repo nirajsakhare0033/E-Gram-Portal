@@ -31,15 +31,15 @@
         <label >Mobile Number</label>
         <input  [(ngModel)]="registerUser.mobNum" type="number" class="form-control" placeholder="Mobile Number" />
       </div>
-      <div>
-        <select >
+     
+        <select  [(ngModel)]="selectedVillage">
           <option >--select--</option>
           <option *ngFor="let village of allVillageData">
             {{village.villageName}}
-            {{village.selectedVillage}}
+            
           </option>
         </select>
-      </div>
+   
       <div class="form-group col-md-6">
         <button (click)=" userRegister()" type="submit" class="btn btn-primary">Sign in</button>
       </div>

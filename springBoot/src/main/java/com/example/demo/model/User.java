@@ -28,6 +28,6 @@ public class User {
 	Date registrationDate;
 	int userRole;
 	int userverified;
-	String selectedVillage;
+	//String selectedVillage;
 
 }

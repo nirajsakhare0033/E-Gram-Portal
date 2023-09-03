@@ -45,7 +45,7 @@ public class MyServiceImplementation implements MyService {
 		try {
 			user.setRegistrationDate(new Date());
 			user.setUserRole(3);
-			user.setSelectedVillage(selectedVillage);
+			
 			user.setUserverified(1);
 			userRepo.save(user);
 			
